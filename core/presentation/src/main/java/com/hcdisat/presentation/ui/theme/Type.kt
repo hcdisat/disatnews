@@ -1,4 +1,4 @@
-package com.hcdisat.disatnews.ui.theme
+package com.hcdisat.presentation.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
@@ -6,9 +6,9 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import com.hcdisat.disatnews.R
+import com.hcdisat.presentation.R
 
-val Poppins = FontFamily(
+internal val Poppins = FontFamily(
     fonts = listOf(
         Font(R.font.poppins_regular, FontWeight.Normal),
         Font(R.font.poppins_bold, FontWeight.Bold),
@@ -19,7 +19,7 @@ val Poppins = FontFamily(
 // Set of Material typography styles to start with
 // body is "Text" in the Figma Design
 // label small is x-small in Figma Design
-val Typography = Typography(
+internal val Typography = Typography(
     displaySmall = TextStyle(
         fontSize = 24.sp,
         fontFamily = Poppins,

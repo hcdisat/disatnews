@@ -1,4 +1,4 @@
-package com.hcdisat.disatnews.ui.theme
+package com.hcdisat.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build

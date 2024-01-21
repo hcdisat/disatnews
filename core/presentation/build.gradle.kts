@@ -1,26 +1,17 @@
 plugins {
-    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
-    alias(libs.plugins.hilt.android)
-    id("kotlin-kapt")
-    id("kotlin-parcelize")
 }
 
 android {
-    namespace = ProjectSettings.namespace("disatnews")
+    namespace = ProjectSettings.namespace("presentation")
     compileSdk = ProjectSettings.compileSdk
 
     defaultConfig {
-        applicationId = ProjectSettings.applicationId
         minSdk = ProjectSettings.minSdk
-        targetSdk = ProjectSettings.targetSdk
-        versionCode = ProjectSettings.versionCode
-        versionName = ProjectSettings.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -45,11 +36,6 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = ProjectSettings.Versions.kotlinCompiler
     }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
 }
 
 dependencies {
@@ -63,8 +49,6 @@ dependencies {
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
 
-    implementation(libs.coil.compose)
-
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
@@ -73,14 +57,4 @@ dependencies {
 
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
-
-    implementation(libs.navigation.compose)
-    implementation(libs.core.splashscreen)
-
-    // hilt
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
-    implementation(libs.hilt.navigation.compose)
-
-    implementation(project(ProjectSettings.Modules.Presentation.path))
 }

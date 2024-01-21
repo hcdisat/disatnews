@@ -14,4 +14,8 @@ object ProjectSettings {
     }
 
     fun namespace(moduleName: String) = "$mainNamespace.$moduleName"
+
+    enum class Modules(val path: String) {
+        Presentation(":core:presentation")
+    }
 }
