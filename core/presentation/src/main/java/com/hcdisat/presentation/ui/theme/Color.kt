@@ -13,3 +13,6 @@ internal val LightBlack = Color(0xFF3A3B3C) //Dark Surface
 
 internal val BlueGray = Color(0xFFA0A3BD)
 internal val WhiteGray = Color(0xFFB0B3B8)
+
+internal val OnBackground = Color(0xFF000000)
+internal val OnBackgroundNight = Color(0xFFFFFFFF)

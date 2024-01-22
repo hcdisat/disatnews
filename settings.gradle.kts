@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "DisatNews"
 include(":app")
 include(":core:presentation")
+include(":features:onboarding")

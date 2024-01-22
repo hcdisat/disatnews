@@ -14,10 +14,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.res.colorResource
 import androidx.core.view.WindowCompat
 
 private val DarkColorScheme = darkColorScheme(
     background = Black,
+    onBackground = OnBackgroundNight,
     primary = Blue,
     error = DarkRed,
     surface = LightBlack
@@ -25,6 +27,7 @@ private val DarkColorScheme = darkColorScheme(
 
 private val LightColorScheme = lightColorScheme(
     background = Color.White,
+    onBackground = OnBackground,
     primary = Blue,
     error = LightRed,
     surface = Color.White

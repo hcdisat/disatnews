@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = ProjectSettings.namespace("presentation")
+    namespace =  ProjectSettings.namespace("onboarding")
     compileSdk = ProjectSettings.compileSdk
 
     defaultConfig {
-        minSdk = ProjectSettings.minSdk
+        minSdk = ProjectSettings.targetSdk
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -56,4 +56,6 @@ dependencies {
 
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
+
+    implementation(project(ProjectSettings.Modules.Presentation.path))
 }

@@ -29,6 +29,8 @@ paging-compose = "3.2.1"
 
 room-ktx = "2.6.1"
 kotlin-serialization = "1.8.21"
+appcompat = "1.6.1"
+material = "1.11.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -74,6 +76,8 @@ core-splashscreen = { group = "androidx.core", name = "core-splashscreen", versi
 navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation-compose" }
 coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil-compose" }
 foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "foundation" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
