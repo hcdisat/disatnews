@@ -1,7 +1,6 @@
 package com.hcdisat.disatnews
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
@@ -21,13 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             DisatNewsTheme {
                 Box(modifier = Modifier.background(color = MaterialTheme.colorScheme.background)) {
-                    OnboardingScreen {
-                        Toast.makeText(
-                            this@MainActivity,
-                            "Onboarding done!",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
+                    OnboardingScreen { }
                 }
             }
         }
