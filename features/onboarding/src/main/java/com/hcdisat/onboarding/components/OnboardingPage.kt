@@ -5,6 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
@@ -12,13 +13,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import com.hcdisat.onboarding.model.Page
 import com.hcdisat.onboarding.model.pages
 import com.hcdisat.presentation.ui.theme.DisatNewsTheme
+import com.hcdisat.presentation.ui.theme.TextMedium
 
 @Composable
 internal fun OnboardingPage(modifier: Modifier = Modifier, page: Page) {
@@ -29,7 +30,8 @@ internal fun OnboardingPage(modifier: Modifier = Modifier, page: Page) {
         Image(
             modifier = modifier
                 .fillMaxWidth()
-                .fillMaxHeight(fraction = .6f),
+                .fillMaxHeight(.6f)
+                .weight(1f),
             painter = painterResource(id = page.stepImage),
             contentDescription = null,
             contentScale = ContentScale.Crop
@@ -45,13 +47,13 @@ internal fun OnboardingPage(modifier: Modifier = Modifier, page: Page) {
                 text = page.title,
                 style = MaterialTheme.typography.displaySmall.copy(
                     fontWeight = FontWeight.Bold,
-                    color = colorResource(id = com.hcdisat.presentation.R.color.display_small)
+                    color = MaterialTheme.colorScheme.onBackground
                 )
             )
             Text(
                 text = page.description,
                 style = MaterialTheme.typography.bodyMedium.copy(
-                    color = MaterialTheme.colorScheme.onBackground.copy(alpha = .7f)
+                    color = TextMedium
                 )
             )
         }

@@ -25,7 +25,7 @@ fun AppButton(
     modifier: Modifier = Modifier,
     text: String = "Next",
     containerColor: Color = MaterialTheme.colorScheme.surface,
-    textColor: Color = MaterialTheme.colorScheme.onSurface,
+    textColor: Color = MaterialTheme.colorScheme.onBackground,
     onClick: () -> Unit = {}
 ) {
     Button(

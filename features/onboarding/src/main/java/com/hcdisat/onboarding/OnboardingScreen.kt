@@ -1,13 +1,13 @@
 package com.hcdisat.onboarding
 
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
@@ -48,10 +48,7 @@ fun OnboardingScreen(
         }
     }
 
-    Column(
-        modifier = modifier.background(color = MaterialTheme.colorScheme.background),
-        verticalArrangement = Arrangement.SpaceBetween
-    ) {
+    Column(modifier = modifier, verticalArrangement = Arrangement.SpaceBetween) {
         HorizontalPager(
             modifier = Modifier.weight(1f),
             state = pagerState,
@@ -61,10 +58,12 @@ fun OnboardingScreen(
 
         Navigator(
             modifier = Modifier
+                .padding(horizontal = OnboardingDimen.smallPadding())
                 .padding(
                     top = OnboardingDimen.largePadding(),
                     bottom = OnboardingDimen.mediumPadding()
-                ),
+                )
+                .navigationBarsPadding(),
             size = pagerState.pageCount,
             selectedIndex = pagerState.currentPage,
             labels = navigatorLabels,

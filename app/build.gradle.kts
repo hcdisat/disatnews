@@ -83,4 +83,5 @@ dependencies {
     implementation(libs.hilt.navigation.compose)
 
     implementation(project(ProjectSettings.Modules.Presentation.path))
+    implementation(project(ProjectSettings.Modules.FeaturesOnboarding.path))
 }
