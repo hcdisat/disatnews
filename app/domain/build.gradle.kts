@@ -44,5 +44,6 @@ dependencies {
     implementation(libs.kotlinx.coroutines)
 
     implementation(project(ProjectSettings.Modules.CoreCommon.path))
+    implementation(project(ProjectSettings.Modules.CoreDataAccessDataStore.path))
     implementation(project(ProjectSettings.Modules.CoreApi.path))
 }

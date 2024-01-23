@@ -24,6 +24,9 @@ android {
     }
 
     buildTypes {
+        debug {
+            enableUnitTestCoverage = true
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -82,6 +85,13 @@ dependencies {
     kapt(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
 
-    implementation(project(ProjectSettings.Modules.Presentation.path))
+    implementation(libs.kotlinx.coroutines)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.mockk)
+
+    implementation(project(ProjectSettings.Modules.CorePresentation.path))
+    implementation(project(ProjectSettings.Modules.CoreCommon.path))
+    implementation(project(ProjectSettings.Modules.CoreApi.path))
     implementation(project(ProjectSettings.Modules.FeaturesOnboarding.path))
+    implementation(project(ProjectSettings.Modules.AppDomain.path))
 }

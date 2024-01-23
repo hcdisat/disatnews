@@ -57,5 +57,5 @@ dependencies {
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
 
-    implementation(project(ProjectSettings.Modules.Presentation.path))
+    implementation(project(ProjectSettings.Modules.CorePresentation.path))
 }
