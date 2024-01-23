@@ -8,3 +8,7 @@ sealed class Destination(val route: String) {
     data object Onboarding : Destination("onboarding")
     data object Tmp : Destination("tmp")
 }
+
+sealed interface NavigationEvent {
+    data object OnboardingCompleted : NavigationEvent
+}
