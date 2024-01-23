@@ -17,6 +17,10 @@ object ProjectSettings {
 
     enum class Modules(val path: String) {
         Presentation(":core:presentation"),
-        FeaturesOnboarding(":features:onboarding")
+        FeaturesOnboarding(":features:onboarding"),
+        CoreDataAccessDataStore(":core:dataaccess:datastore"),
+        CoreCommon(":core:common"),
+        CoreApi(":core:api"),
+        AppDomain(":domain")
     }
 }
