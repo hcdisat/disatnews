@@ -2,6 +2,7 @@
 
 # Core
 agp = "8.2.1"
+ksp = "1.9.22-1.0.17"
 kotlin = "1.9.22"
 kotlinx-coroutines = "1.7.3"
 core-ktx = "1.12.0"
@@ -91,3 +92,4 @@ kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt-android" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin-serialization"}
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

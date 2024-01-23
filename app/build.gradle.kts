@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.hilt.android)
-    id("kotlin-kapt")
+    alias(libs.plugins.ksp)
     id("kotlin-parcelize")
 }
 
@@ -82,7 +82,7 @@ dependencies {
 
     // hilt
     implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
 
     implementation(libs.kotlinx.coroutines)
