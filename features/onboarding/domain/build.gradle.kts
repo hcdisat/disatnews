@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace =  ProjectSettings.namespace("onboarding")
+    namespace = ProjectSettings.namespace("domain")
     compileSdk = ProjectSettings.compileSdk
 
     defaultConfig {
@@ -32,42 +32,20 @@ android {
     kotlinOptions {
         jvmTarget = ProjectSettings.Versions.jvmTarget
     }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = ProjectSettings.Versions.kotlinCompiler
-    }
 }
 
 dependencies {
     implementation(libs.core.ktx)
+    testImplementation(libs.junit)
 
-    implementation(libs.activity.compose)
-    implementation(platform(libs.compose.bom))
-    implementation(libs.ui)
-    implementation(libs.ui.graphics)
-    implementation(libs.ui.tooling.preview)
-    implementation(libs.material3)
-    implementation(libs.navigation.compose)
-
+    // hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
 
-    testImplementation(libs.junit)
-    testImplementation(libs.kotlinx.coroutines.test)
-    testImplementation(libs.mockk)
-    androidTestImplementation(libs.androidx.test.ext.junit)
-    androidTestImplementation(libs.espresso.core)
-    androidTestImplementation(platform(libs.compose.bom))
-    androidTestImplementation(libs.ui.test.junit4)
+    implementation(libs.kotlinx.coroutines)
 
-    debugImplementation(libs.ui.tooling)
-    debugImplementation(libs.ui.test.manifest)
-
-    implementation(project(ProjectSettings.Modules.CorePresentation.path))
     implementation(project(ProjectSettings.Modules.CoreCommon.path))
+    implementation(project(ProjectSettings.Modules.CoreDataAccessDataStore.path))
     implementation(project(ProjectSettings.Modules.CoreApi.path))
-    implementation(project(ProjectSettings.Modules.FeaturesOnboardingDomain.path))
 }

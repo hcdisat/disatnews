@@ -68,7 +68,6 @@ dependencies {
 
     implementation(libs.coil.compose)
 
-    testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(platform(libs.compose.bom))
@@ -86,12 +85,14 @@ dependencies {
     implementation(libs.hilt.navigation.compose)
 
     implementation(libs.kotlinx.coroutines)
+
+    testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.mockk)
 
     implementation(project(ProjectSettings.Modules.CorePresentation.path))
     implementation(project(ProjectSettings.Modules.CoreCommon.path))
     implementation(project(ProjectSettings.Modules.CoreApi.path))
+    // features
     implementation(project(ProjectSettings.Modules.FeaturesOnboarding.path))
-    implementation(project(ProjectSettings.Modules.AppDomain.path))
 }

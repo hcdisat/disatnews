@@ -16,13 +16,12 @@ object ProjectSettings {
     fun namespace(moduleName: String) = "$mainNamespace.$moduleName"
 
     enum class Modules(val path: String) {
-        AppDomain(":app:domain"),
-
         CoreDataAccessDataStore(":core:dataaccess:datastore"),
         CoreCommon(":core:common"),
         CorePresentation(":core:presentation"),
         CoreApi(":core:api"),
 
         FeaturesOnboarding(":features:onboarding"),
+        FeaturesOnboardingDomain(":features:onboarding:domain"),
     }
 }

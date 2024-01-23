@@ -35,4 +35,6 @@ android {
 dependencies {
     implementation(libs.core.ktx)
     implementation(libs.kotlinx.coroutines)
+
+    implementation(libs.navigation.compose)
 }

@@ -31,3 +31,12 @@ internal val pages = listOf(
         stepImage = R.drawable.onboarding3
     )
 )
+
+internal sealed interface OnboardingState {
+    data object OnboardingCompleted : OnboardingState
+    data object OnboardingPending : OnboardingState
+}
+
+internal sealed interface OnboardingAction {
+    data object CompleteOnboarding : OnboardingAction
+}
