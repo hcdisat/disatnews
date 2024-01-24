@@ -24,10 +24,13 @@ android {
     }
 
     buildTypes {
+        val apiKey = providers.environmentVariable("NEWS_API_KEY").getOrElse("")
         debug {
+            buildConfigField("String", "NEWS_API_KEY", """"$apiKey"""")
             enableUnitTestCoverage = true
         }
         release {
+            buildConfigField("String", "NEWS_API_KEY", """"$apiKey"""")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -44,6 +47,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = ProjectSettings.Versions.kotlinCompiler

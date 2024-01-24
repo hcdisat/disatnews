@@ -30,7 +30,9 @@ paging-runtime = "3.2.1"
 paging-compose = "3.2.1"
 
 room-ktx = "2.6.1"
-kotlin-serialization = "1.8.21"
+kotlin-serializationPlugin = "1.8.21"
+kotlin-serializationLib = "1.5.1"
+serialization-converter = "1.0.0"
 appcompat = "1.6.1"
 material = "1.11.0"
 mockk = "1.13.9"
@@ -59,10 +61,9 @@ espresso-core = { group = "androidx.test.espresso", name = "espresso-core", vers
 mockk = { group = "io.mockk", name = "mockk-android", version.ref = "mockk" }
 
 
-# IO
+# datastore
 datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore-preferences" }
-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "converter-gson" }
+
 
 # hilt
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt-android" }
@@ -78,6 +79,14 @@ room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room-ktx" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room-ktx" }
 
+# retrofit
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "converter-gson" }
+
+# serialization
+kotlin-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlin-serializationLib" }
+serialization-converter = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "serialization-converter" }
+
 # libs
 core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "core-splashscreen" }
 navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation-compose" }
@@ -90,6 +99,6 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt-android" }
-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin-serialization"}
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin-serializationPlugin" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
