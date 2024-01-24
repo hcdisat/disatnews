@@ -49,7 +49,9 @@ dependencies {
     ksp(libs.hilt.compiler)
 
     implementation(libs.retrofit)
+    implementation(libs.loggingInterceptor)
     implementation(libs.converter.gson)
+
     implementation(libs.kotlinx.coroutines)
     implementation(libs.paging.runtime)
 
