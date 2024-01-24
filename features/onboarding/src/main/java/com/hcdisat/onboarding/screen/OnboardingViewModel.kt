@@ -23,7 +23,7 @@ internal class OnboardingViewModel @Inject constructor(
     private val getOnboarding: GetOnboardingStateUseCase,
     private val completeOnboarding: CompleteOnboardingUseCase
 ) : ViewModel() {
-    var state: OnboardingState by mutableStateOf(OnboardingState.OnboardingPending)
+    var state: OnboardingState by mutableStateOf(OnboardingState.OnboardingPreparing)
         private set
 
     init {

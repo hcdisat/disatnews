@@ -35,6 +35,7 @@ internal val pages = listOf(
 internal sealed interface OnboardingState {
     data object OnboardingCompleted : OnboardingState
     data object OnboardingPending : OnboardingState
+    data object OnboardingPreparing : OnboardingState
 }
 
 internal sealed interface OnboardingAction {
