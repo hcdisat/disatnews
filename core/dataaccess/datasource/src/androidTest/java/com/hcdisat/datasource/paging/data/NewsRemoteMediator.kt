@@ -1,4 +1,4 @@
-package com.hcdisat.datasource.paging
+package com.hcdisat.datasource.paging.data
 
 import android.net.http.HttpException
 import androidx.paging.ExperimentalPagingApi
