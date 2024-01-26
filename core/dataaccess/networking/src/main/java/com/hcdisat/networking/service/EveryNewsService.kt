@@ -11,13 +11,13 @@ interface EveryNewsService {
         @Query("q") query: String,
         @Query("sources") sources: String,
         @Query("page") page: Int,
-//        @Query("pageSize") pageSize: String,
+        @Query("pageSize") pageSize: Int,
     ): Response<EverythingResponse>
 
     @GET("everything")
     suspend fun getBySources(
         @Query("sources") sources: String,
         @Query("page") page: Int,
-//        @Query("pageSize") pageSize: String,
+        @Query("pageSize") pageSize: Int,
     ): Response<EverythingResponse>
 }

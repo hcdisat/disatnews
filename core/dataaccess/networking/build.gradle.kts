@@ -53,7 +53,6 @@ dependencies {
     implementation(libs.converter.gson)
 
     implementation(libs.kotlinx.coroutines)
-    implementation(libs.paging.runtime)
 
     testImplementation(libs.junit)
 }

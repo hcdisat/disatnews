@@ -2,14 +2,24 @@ package com.hcdisat.networking.model
 
 import com.google.gson.annotations.SerializedName
 
+abstract class BaseResponse {
+    val code: String? = null
+    val message: String? = null
+
+    fun maximumResultsReached(): Boolean {
+        return code != null && code == "maximumResultsReached"
+    }
+}
+
+
 data class EverythingResponse(
     @SerializedName("articles")
-    val articles: List<Article?>?,
+    val articles: List<Article?>,
     @SerializedName("status")
-    val status: String?,
+    val status: String,
     @SerializedName("totalResults")
-    val totalResults: Int?
-)
+    val totalResults: Int
+) : BaseResponse()
 
 data class Source(
     @SerializedName("id")

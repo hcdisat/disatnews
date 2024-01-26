@@ -1,10 +1,12 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.hilt.android)
+    alias(libs.plugins.ksp)
 }
 
 android {
-    namespace = ProjectSettings.namespace("api")
+    namespace = ProjectSettings.namespace("datasource")
     compileSdk = ProjectSettings.compileSdk
 
     defaultConfig {
@@ -34,8 +36,14 @@ android {
 
 dependencies {
     implementation(libs.core.ktx)
-    implementation(libs.kotlinx.coroutines)
 
-    implementation(libs.navigation.compose)
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+    implementation(libs.kotlinx.coroutines)
     implementation(libs.paging.runtime)
+
+    testImplementation(libs.junit)
+
+    implementation(project(ProjectSettings.Modules.CoreDataAccessNetworking.path))
+    implementation(project(ProjectSettings.Modules.CoreApi.path))
 }
