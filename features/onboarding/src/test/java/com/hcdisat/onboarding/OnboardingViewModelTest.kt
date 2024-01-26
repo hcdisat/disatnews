@@ -1,8 +1,8 @@
 package com.hcdisat.onboarding
 
-import com.hcdisat.api.model.DataStoreSession
+import com.hcdisat.api.model.OnboardingSession
+import com.hcdisat.domain.usecases.GetOnboardingStateUseCase
 import com.hcdisat.onboarding.domain.usecases.CompleteOnboardingUseCase
-import com.hcdisat.onboarding.domain.usecases.GetOnboardingStateUseCase
 import com.hcdisat.onboarding.model.OnboardingAction
 import com.hcdisat.onboarding.model.OnboardingState
 import com.hcdisat.onboarding.screen.OnboardingViewModel
@@ -42,7 +42,7 @@ class OnboardingViewModelTest {
     fun setUp() {
         Dispatchers.setMain(mainDispatcher)
 
-        every { getOnboarding.invoke() } returns flow { emit(DataStoreSession.Pending) }
+        every { getOnboarding.invoke() } returns flow { emit(OnboardingSession.Pending) }
 
         mainViewModel = OnboardingViewModel(
             ioDispatcher = ioDispatcher,
@@ -69,7 +69,7 @@ class OnboardingViewModelTest {
 
     @Test
     fun `it should set the starting navigation to Tmp if the state is Completed`() {
-        every { getOnboarding.invoke() } returns flow { emit(DataStoreSession.Completed) }
+        every { getOnboarding.invoke() } returns flow { emit(OnboardingSession.Completed) }
         scheduler.advanceUntilIdle()
 
         val current = mainViewModel.state
