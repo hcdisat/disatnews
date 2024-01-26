@@ -7,5 +7,17 @@ import retrofit2.http.Query
 
 interface EveryNewsService {
     @GET("everything")
-    suspend fun getAll(@Query("q") query: String): Response<EverythingResponse>
+    suspend fun search(
+        @Query("q") query: String,
+        @Query("sources") sources: String,
+        @Query("page") page: Int,
+//        @Query("pageSize") pageSize: String,
+    ): Response<EverythingResponse>
+
+    @GET("everything")
+    suspend fun getBySources(
+        @Query("sources") sources: String,
+        @Query("page") page: Int,
+//        @Query("pageSize") pageSize: String,
+    ): Response<EverythingResponse>
 }
