@@ -1,6 +1,6 @@
 package com.hcdisat.domain.usecases
 
-import com.hcdisat.api.model.OnboardingSession
+import com.hcdisat.api.model.onboarding.OnboardingSession
 import com.hcdisat.api.repository.UserSessionRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map

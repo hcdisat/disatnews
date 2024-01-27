@@ -1,3 +1,3 @@
-package com.hcdisat.api.model
+package com.hcdisat.api.model.onboarding
 
 enum class OnboardingSession { Completed, Pending }

@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.hcdisat.api.model.OnboardingSession
+import com.hcdisat.api.model.onboarding.OnboardingSession
 import com.hcdisat.common.di.IO
 import com.hcdisat.domain.usecases.GetOnboardingStateUseCase
 import com.hcdisat.onboarding.domain.usecases.CompleteOnboardingUseCase
