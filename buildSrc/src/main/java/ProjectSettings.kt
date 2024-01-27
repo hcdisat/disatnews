@@ -25,5 +25,7 @@ object ProjectSettings {
 
         FeaturesOnboarding(":features:onboarding"),
         FeaturesOnboardingDomain(":features:onboarding:domain"),
+        FeaturesNews(":features:news"),
+        FeaturesNewsDomain(":features:news:domain"),
     }
 }

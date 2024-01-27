@@ -98,4 +98,5 @@ dependencies {
     implementation(project(ProjectSettings.Modules.CoreApi.path))
     // features
     implementation(project(ProjectSettings.Modules.FeaturesOnboarding.path))
+    implementation(project(ProjectSettings.Modules.FeaturesNews.path))
 }
