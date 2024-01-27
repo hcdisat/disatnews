@@ -3,7 +3,7 @@ package com.hcdisat.datasource.paging.repository
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import com.hcdisat.api.paging.PagedArticle
+import com.hcdisat.api.model.news.PagedArticle
 import com.hcdisat.datasource.paging.data.ArticleDataSource
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

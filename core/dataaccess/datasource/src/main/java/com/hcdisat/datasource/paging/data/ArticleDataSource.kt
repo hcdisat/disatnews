@@ -3,7 +3,7 @@ package com.hcdisat.datasource.paging.data
 import android.net.http.HttpException
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.hcdisat.api.paging.PagedArticle
+import com.hcdisat.api.model.news.PagedArticle
 import com.hcdisat.datasource.paging.paged
 import com.hcdisat.networking.model.EverythingResponse
 import com.hcdisat.networking.repositpry.EveryNewsRepository

@@ -1,4 +1,4 @@
-package com.hcdisat.api.paging
+package com.hcdisat.api.model.news
 
 data class PagedSource(
     val id: String = "",

@@ -1,7 +1,7 @@
 package com.hcdisat.domain.usecases
 
 import androidx.paging.PagingData
-import com.hcdisat.api.paging.PagedArticle
+import com.hcdisat.api.model.news.PagedArticle
 import com.hcdisat.datasource.paging.repository.PagedArticleRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

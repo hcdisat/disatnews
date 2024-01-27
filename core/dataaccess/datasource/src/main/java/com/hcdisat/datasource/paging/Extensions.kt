@@ -1,7 +1,7 @@
 package com.hcdisat.datasource.paging
 
-import com.hcdisat.api.paging.PagedArticle
-import com.hcdisat.api.paging.PagedSource
+import com.hcdisat.api.model.news.PagedArticle
+import com.hcdisat.api.model.news.PagedSource
 import com.hcdisat.networking.model.Article
 
 fun Article?.paged(): PagedArticle {
