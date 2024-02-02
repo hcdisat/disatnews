@@ -1,6 +1,6 @@
 package com.hcdisat.onboarding.domain.usecases
 
-import com.hcdisat.api.repository.UserSessionRepository
+import com.hcdisat.onboarding.domain.repository.UserSessionRepository
 import javax.inject.Inject
 
 interface CompleteOnboardingUseCase {

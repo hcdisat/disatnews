@@ -71,4 +71,5 @@ dependencies {
     implementation(project(ProjectSettings.Modules.CoreCommon.path))
     implementation(project(ProjectSettings.Modules.CoreApi.path))
     implementation(project(ProjectSettings.Modules.FeaturesOnboardingDomain.path))
+    implementation(project(ProjectSettings.Modules.FeaturesOnboardingData.path))
 }

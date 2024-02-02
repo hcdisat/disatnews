@@ -6,16 +6,20 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.emptyPreferences
-import com.hcdisat.api.repository.UserSessionRepository
 import com.hcdisat.common.AppSettings
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
-class UserSessionRepositoryImpl @Inject constructor(
+interface DataStoreService {
+    suspend fun saveAppEntry()
+    fun getAppEntry(): Flow<Boolean>
+}
+
+class DataStoreServiceImpl @Inject constructor(
     private val datastore: DataStore<Preferences>
-) : UserSessionRepository {
+) : DataStoreService {
     private val keys = SessionKeys()
 
     override suspend fun saveAppEntry() {

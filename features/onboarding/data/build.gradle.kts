@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = ProjectSettings.namespace("domain")
+    namespace = ProjectSettings.namespace("onboarding.data")
     compileSdk = ProjectSettings.compileSdk
 
     defaultConfig {
@@ -36,12 +36,16 @@ android {
 
 dependencies {
     implementation(libs.core.ktx)
+    implementation(libs.appcompat)
     testImplementation(libs.junit)
 
     // hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
-    implementation(libs.hilt.navigation.compose)
-
     implementation(libs.kotlinx.coroutines)
+
+    implementation(libs.datastore.preferences)
+
+    implementation(project(ProjectSettings.Modules.CoreDataAccessDataStore.path))
+    implementation(project(ProjectSettings.Modules.FeaturesOnboardingDomain.path))
 }

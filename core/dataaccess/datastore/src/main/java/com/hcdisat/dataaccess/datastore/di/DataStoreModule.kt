@@ -4,9 +4,9 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
-import com.hcdisat.api.repository.UserSessionRepository
 import com.hcdisat.common.AppSettings
-import com.hcdisat.dataaccess.datastore.repository.UserSessionRepositoryImpl
+import com.hcdisat.dataaccess.datastore.repository.DataStoreService
+import com.hcdisat.dataaccess.datastore.repository.DataStoreServiceImpl
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -32,5 +32,5 @@ class DatastorePreferencesProviderModule {
 interface DatastorePreferencesModule {
     @Binds
     @Singleton
-    fun bindsUserSessionRepository(impl: UserSessionRepositoryImpl): UserSessionRepository
+    fun bindsUserSessionRepository(impl: DataStoreServiceImpl): DataStoreService
 }

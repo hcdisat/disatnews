@@ -1,4 +1,4 @@
-package com.hcdisat.api.repository
+package com.hcdisat.onboarding.domain.repository
 
 import kotlinx.coroutines.flow.Flow
 

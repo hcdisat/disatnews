@@ -1,8 +1,8 @@
 package com.hcdisat.onboarding
 
 import com.hcdisat.api.model.onboarding.OnboardingSession
-import com.hcdisat.domain.usecases.GetOnboardingStateUseCase
 import com.hcdisat.onboarding.domain.usecases.CompleteOnboardingUseCase
+import com.hcdisat.onboarding.domain.usecases.GetOnboardingStateUseCase
 import com.hcdisat.onboarding.model.OnboardingAction
 import com.hcdisat.onboarding.model.OnboardingState
 import com.hcdisat.onboarding.screen.OnboardingViewModel
