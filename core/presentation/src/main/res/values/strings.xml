@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">DisatNews</string>
+    <string name="error_server_unavailable">Server Unavailable.</string>
+    <string name="error_internet_unavailable">Internet Unavailable.</string>
+    <string name="error_unknown_error">Unknown Error.</string>
+    <string name="empty_screen_message">You have not saved news so far!</string>
 </resources>

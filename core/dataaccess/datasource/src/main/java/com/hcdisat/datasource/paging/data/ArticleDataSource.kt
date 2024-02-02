@@ -1,6 +1,5 @@
 package com.hcdisat.datasource.paging.data
 
-import android.net.http.HttpException
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.hcdisat.api.model.news.PagedArticle
@@ -48,7 +47,7 @@ class ArticleDataSource @Inject constructor(
             )
         } catch (e: IOException) {
             LoadResult.Error(e)
-        } catch (e: HttpException) {
+        } catch (e: Throwable) {
             LoadResult.Error(e)
         }
     }

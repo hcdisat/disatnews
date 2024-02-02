@@ -55,6 +55,10 @@ dependencies {
     ksp(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
 
+    debugImplementation(libs.ui.tooling)
+    debugImplementation(libs.ui.tooling.preview)
+    debugImplementation(libs.ui.test.manifest)
+
     testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.mockk)
@@ -62,9 +66,6 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.ui.test.junit4)
-
-    debugImplementation(libs.ui.tooling)
-    debugImplementation(libs.ui.test.manifest)
 
     implementation(project(ProjectSettings.Modules.CorePresentation.path))
     implementation(project(ProjectSettings.Modules.CoreCommon.path))
