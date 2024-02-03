@@ -1,9 +1,6 @@
 package com.hcdisat.networking.di
 
-import com.hcdisat.networking.repositpry.EveryNewsRepository
-import com.hcdisat.networking.repositpry.EveryNewsRepositoryImpl
 import com.hcdisat.networking.service.EveryNewsService
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,12 +22,4 @@ class NetworkServiceProvider {
             .client(client)
             .build()
             .create(EveryNewsService::class.java)
-}
-
-@Module
-@InstallIn(SingletonComponent::class)
-interface NetworkRepositoryProvider {
-    @Binds
-    @Singleton
-    fun bindsEveryNewsRepository(impl: EveryNewsRepositoryImpl): EveryNewsRepository
 }

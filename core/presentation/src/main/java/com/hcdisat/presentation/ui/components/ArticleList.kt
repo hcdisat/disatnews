@@ -12,8 +12,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.paging.CombinedLoadStates
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
-import com.hcdisat.api.model.news.PagedArticle
 import com.hcdisat.presentation.R
+import com.hcdisat.presentation.ui.model.Article
 import com.hcdisat.presentation.ui.theme.DimenDefault
 import java.net.ConnectException
 import java.net.SocketTimeoutException
@@ -21,11 +21,11 @@ import java.net.SocketTimeoutException
 @Composable
 fun ArticleList(
     modifier: Modifier,
-    articles: LazyPagingItems<PagedArticle>
+    articles: LazyPagingItems<Article>
 ) {
     when (val state = handlePagingResult(articles.loadState)) {
         is ListState.AppendLoading -> Unit
-        is ListState.Completed -> TODO()
+        is ListState.Completed -> RenderArticles(articles = articles, modifier = modifier)
         is ListState.Error -> EmptyScreen(errorMessage = parseErrorMessage(state.throwable))
         is ListState.RefreshLoading -> ArticleShimmer()
     }
@@ -34,7 +34,7 @@ fun ArticleList(
 @Composable
 private fun RenderArticles(
     modifier: Modifier = Modifier,
-    articles: LazyPagingItems<PagedArticle>
+    articles: LazyPagingItems<Article>
 ) {
     LazyColumn(
         modifier = modifier,

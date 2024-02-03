@@ -1,6 +1,6 @@
 package com.hcdisat.onboarding
 
-import com.hcdisat.api.model.onboarding.OnboardingSession
+import com.hcdisat.onboarding.domain.entity.OnboardingSession
 import com.hcdisat.onboarding.domain.usecases.CompleteOnboardingUseCase
 import com.hcdisat.onboarding.domain.usecases.GetOnboardingStateUseCase
 import com.hcdisat.onboarding.model.OnboardingAction

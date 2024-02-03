@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = ProjectSettings.namespace("news.domain")
+    namespace = ProjectSettings.namespace("news.data")
     compileSdk = ProjectSettings.compileSdk
 
     defaultConfig {
@@ -37,9 +37,14 @@ android {
 dependencies {
     implementation(libs.core.ktx)
 
-    implementation(libs.paging.runtime)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+    implementation(libs.kotlinx.coroutines)
+    implementation(libs.paging.runtime)
 
     testImplementation(libs.junit)
+    implementation(libs.retrofit)
+
+    implementation(project(ProjectSettings.Modules.CoreDataAccessNetworking.path))
+    implementation(project(ProjectSettings.Modules.FeaturesNewsDomain.path))
 }

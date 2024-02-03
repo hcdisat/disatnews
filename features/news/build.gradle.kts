@@ -71,8 +71,8 @@ dependencies {
     androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.ui.test.junit4)
 
-    implementation(project(ProjectSettings.Modules.CorePresentation.path))
     implementation(project(ProjectSettings.Modules.FeaturesNewsDomain.path))
-    implementation(project(ProjectSettings.Modules.CoreApi.path))
+    implementation(project(ProjectSettings.Modules.FeaturesNewsData.path))
+    implementation(project(ProjectSettings.Modules.CorePresentation.path))
     implementation(project(ProjectSettings.Modules.CoreCommon.path))
 }

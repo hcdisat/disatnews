@@ -35,9 +35,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import com.hcdisat.api.model.news.PagedArticle
-import com.hcdisat.api.model.news.PagedSource
 import com.hcdisat.presentation.R
+import com.hcdisat.presentation.ui.model.Article
 import com.hcdisat.presentation.ui.theme.DimenDefault
 import com.hcdisat.presentation.ui.theme.DisatNewsTheme
 import com.hcdisat.presentation.ui.theme.TextMedium
@@ -47,7 +46,7 @@ import java.time.format.DateTimeFormatter
 @Composable
 fun ArticleItem(
     modifier: Modifier = Modifier,
-    article: PagedArticle,
+    article: Article,
     onClick: () -> Unit = {}
 ) {
     Row(
@@ -84,7 +83,7 @@ fun ArticleItem(
             ) {
                 Text(
                     modifier = Modifier.padding(end = DimenDefault.smallPadding()),
-                    text = article.source.name,
+                    text = article.sourceName,
                     style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold),
                     color = TextMedium
                 )
@@ -135,7 +134,7 @@ fun DateInfo(
 fun ArticleItemPreview() {
     DisatNewsTheme {
         ArticleItem(
-            article = PagedArticle(
+            article = Article(
                 author = "Karissa Bell",
                 title = "SEC approves bitcoin ETFs (for real this time)",
                 description = """
@@ -151,7 +150,8 @@ fun ArticleItemPreview() {
                     The Securities and Exchange Commission has approved\r\n
                     the applications of 11 spot bitcoin ETFs in a highly anticipated decision that will make it much easier for people to dabble in cryptocurrency in… [+1453 chars]
                 """.trimIndent(),
-                source = PagedSource("fox-news", "FOX News")
+                sourceId = "fox-news",
+                sourceName = "FOX News"
             )
         )
     }

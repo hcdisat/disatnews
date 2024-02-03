@@ -18,7 +18,6 @@ object ProjectSettings {
     enum class Modules(val path: String) {
         CoreDataAccessDataStore(":core:dataaccess:datastore"),
         CoreDataAccessNetworking(":core:dataaccess:networking"),
-        CoreDataAccessDataSource(":core:dataaccess:datasource"),
         CoreCommon(":core:common"),
         CorePresentation(":core:presentation"),
         CoreApi(":core:api"),
@@ -28,5 +27,6 @@ object ProjectSettings {
         FeaturesOnboardingData(":features:onboarding:data"),
         FeaturesNews(":features:news"),
         FeaturesNewsDomain(":features:news:domain"),
+        FeaturesNewsData(":features:news:data")
     }
 }
