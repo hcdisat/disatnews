@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
 @HiltViewModel
-class NewsViewModel @Inject constructor(
+internal class NewsViewModel @Inject constructor(
     loadNews: LoadNewsUseCase,
     @IO dispatcher: CoroutineDispatcher
 ) : ViewModel() {

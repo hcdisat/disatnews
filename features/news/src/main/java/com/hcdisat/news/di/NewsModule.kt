@@ -17,7 +17,7 @@ import dagger.hilt.android.scopes.ViewModelScoped
 
 @Module
 @InstallIn(ViewModelComponent::class)
-interface NewsModule {
+internal interface NewsModule {
     @Binds
     @ViewModelScoped
     fun bindsLoadNewsUseCase(impl: LoadNewsUseCaseImpl): LoadNewsUseCase

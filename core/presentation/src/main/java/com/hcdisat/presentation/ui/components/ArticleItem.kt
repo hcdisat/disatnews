@@ -1,7 +1,6 @@
 package com.hcdisat.presentation.ui.components
 
 import android.content.res.Configuration
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -26,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -39,7 +39,6 @@ import com.hcdisat.presentation.R
 import com.hcdisat.presentation.ui.model.Article
 import com.hcdisat.presentation.ui.theme.DimenDefault
 import com.hcdisat.presentation.ui.theme.DisatNewsTheme
-import com.hcdisat.presentation.ui.theme.TextMedium
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
 
@@ -51,9 +50,7 @@ fun ArticleItem(
 ) {
     Row(
         modifier = modifier
-            .fillMaxWidth()
             .height(IntrinsicSize.Max)
-            .background(MaterialTheme.colorScheme.background)
             .clickable { onClick() },
         horizontalArrangement = Arrangement.spacedBy(DimenDefault.xSmallPadding())
     ) {
@@ -74,7 +71,7 @@ fun ArticleItem(
                     fontSize = 16.sp,
                     lineHeight = 16.sp
                 ),
-                color = MaterialTheme.colorScheme.onBackground
+                color = colorResource(id = R.color.text_title)
             )
 
             Row(
@@ -85,7 +82,7 @@ fun ArticleItem(
                     modifier = Modifier.padding(end = DimenDefault.smallPadding()),
                     text = article.sourceName,
                     style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold),
-                    color = TextMedium
+                    color = colorResource(id = R.color.body)
                 )
                 DateInfo(dateTime = article.publishedAt)
             }
@@ -114,12 +111,12 @@ fun DateInfo(
             imageVector = Icons.Default.DateRange,
             contentDescription = null,
             modifier = Modifier.size(11.dp),
-            tint = MaterialTheme.colorScheme.onSurface
+            tint = colorResource(id = R.color.body)
         )
         Text(
             text = displayDate,
             style = MaterialTheme.typography.labelSmall.copy(fontStyle = FontStyle.Italic),
-            color = TextMedium.copy(alpha = .8f),
+            color = colorResource(id = R.color.body),
             textDecoration = TextDecoration.Underline
         )
     }
