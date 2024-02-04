@@ -9,7 +9,7 @@ import androidx.compose.runtime.setValue
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import com.hcdisat.api.navigation.OnboardingEvent
+import com.hcdisat.common.navigation.OnboardingEvent
 import com.hcdisat.onboarding.OnboardingRoute
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject

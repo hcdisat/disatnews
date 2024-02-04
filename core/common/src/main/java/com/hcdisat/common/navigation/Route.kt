@@ -1,4 +1,4 @@
-package com.hcdisat.api.navigation
+package com.hcdisat.common.navigation
 
 import androidx.navigation.NavGraphBuilder
 

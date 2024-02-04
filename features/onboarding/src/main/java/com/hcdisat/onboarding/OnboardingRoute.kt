@@ -4,8 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.composable
-import com.hcdisat.api.navigation.OnboardingEvent
-import com.hcdisat.api.navigation.Route
+import com.hcdisat.common.navigation.OnboardingEvent
+import com.hcdisat.common.navigation.Route
 import com.hcdisat.onboarding.model.OnboardingState
 import com.hcdisat.onboarding.screen.OnboardingScreen
 import com.hcdisat.onboarding.screen.OnboardingViewModel

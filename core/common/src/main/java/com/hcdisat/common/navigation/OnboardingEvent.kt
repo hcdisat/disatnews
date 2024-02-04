@@ -1,4 +1,4 @@
-package com.hcdisat.api.navigation
+package com.hcdisat.common.navigation
 
 sealed interface OnboardingEvent {
     data object Completed : OnboardingEvent
