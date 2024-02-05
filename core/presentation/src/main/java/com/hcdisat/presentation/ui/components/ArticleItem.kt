@@ -74,9 +74,9 @@ fun ArticleItem(
                 color = colorResource(id = R.color.text_title)
             )
 
-            Row(
+            Column(
                 modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically
+                horizontalAlignment = Alignment.Start
             ) {
                 Text(
                     modifier = Modifier.padding(end = DimenDefault.smallPadding()),

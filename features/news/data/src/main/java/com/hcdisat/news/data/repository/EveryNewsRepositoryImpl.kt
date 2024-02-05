@@ -1,5 +1,7 @@
 package com.hcdisat.news.data.repository
 
+import com.hcdisat.common.exceptions.MaxResultsReachedException
+import com.hcdisat.common.exceptions.MaxResultsReachedException.Companion.MAX_RESULTS_REACHED_CODE
 import com.hcdisat.networking.service.EveryNewsService
 import com.hcdisat.news.data.paged
 import com.hcdisat.news.domain.entity.PagedArticles
@@ -9,6 +11,7 @@ import javax.inject.Inject
 class EveryNewsRepositoryImpl @Inject constructor(
     private val newsService: EveryNewsService
 ) : EveryNewsRepository {
+
     override suspend fun getBySources(
         vararg sources: String,
         page: Int,
@@ -19,6 +22,10 @@ class EveryNewsRepositoryImpl @Inject constructor(
             page = page,
             pageSize = pageSize
         )
+
+        if (MAX_RESULTS_REACHED_CODE.contains(response.code())) {
+            throw MaxResultsReachedException(response.code())
+        }
 
         val news = response.body()
         if (response.isSuccessful && news != null) {

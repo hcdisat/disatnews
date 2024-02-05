@@ -60,5 +60,5 @@ dependencies {
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
 
-    implementation(project(ProjectSettings.Modules.CoreApi.path))
+    implementation(project(ProjectSettings.Modules.CoreCommon.path))
 }

@@ -45,5 +45,4 @@ dependencies {
     testImplementation(libs.junit)
 
     implementation(project(ProjectSettings.Modules.CoreDataAccessNetworking.path))
-    implementation(project(ProjectSettings.Modules.CoreApi.path))
 }

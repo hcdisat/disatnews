@@ -2,5 +2,6 @@ package com.hcdisat.news.domain.entity
 
 data class PagedArticles(
     val articles: List<PagedArticle>,
-    val totalResults: Int
+    val totalResults: Int,
+    val endOfPagination: Boolean = false
 )

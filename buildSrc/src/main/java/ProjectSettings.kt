@@ -20,7 +20,6 @@ object ProjectSettings {
         CoreDataAccessNetworking(":core:dataaccess:networking"),
         CoreCommon(":core:common"),
         CorePresentation(":core:presentation"),
-        CoreApi(":core:api"),
 
         FeaturesOnboarding(":features:onboarding"),
         FeaturesOnboardingDomain(":features:onboarding:domain"),

@@ -2,6 +2,8 @@ package com.hcdisat.disatnews.di
 
 import com.hcdisat.disatnews.navigation.Router
 import com.hcdisat.disatnews.navigation.RouterImpl
+import com.hcdisat.news.NewsRoute
+import com.hcdisat.news.NewsRouteImpl
 import com.hcdisat.onboarding.OnboardingRoute
 import com.hcdisat.onboarding.OnboardingRouteImpl
 import dagger.Binds
@@ -16,6 +18,10 @@ interface AppModule {
     @Binds
     @Singleton
     fun bindsOnboardingRoute(impl: OnboardingRouteImpl): OnboardingRoute
+
+    @Binds
+    @Singleton
+    fun bindsNewsRoute(impl: NewsRouteImpl): NewsRoute
 
     @Binds
     @Singleton

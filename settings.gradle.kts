@@ -17,7 +17,6 @@ rootProject.name = "DisatNews"
 include(":app")
 include(":core:dataaccess:datastore")
 include(":core:common")
-include(":core:api")
 include(":core:presentation")
 include(":features:onboarding")
 include(":features:onboarding:data")

@@ -37,10 +37,9 @@ android {
 dependencies {
     implementation(libs.core.ktx)
     implementation(libs.kotlinx.coroutines)
-
-    testImplementation(libs.junit)
-
-    // hilt
+    implementation(libs.navigation.compose)
+    implementation(libs.paging.runtime)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+    testImplementation(libs.junit)
 }

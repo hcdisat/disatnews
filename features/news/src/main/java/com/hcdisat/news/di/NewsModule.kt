@@ -1,10 +1,10 @@
 package com.hcdisat.news.di
 
-import androidx.paging.PagingSource
-import com.hcdisat.news.data.ArticleDataSource
+import com.hcdisat.common.di.EveryNewsRepositoryNetwork
+import com.hcdisat.common.di.EveryNewsRepositoryNetworkFake
+import com.hcdisat.news.data.repository.EveryNewsFakeRepository
 import com.hcdisat.news.data.repository.EveryNewsRepositoryImpl
 import com.hcdisat.news.data.repository.PagedArticleRepositoryImpl
-import com.hcdisat.news.domain.entity.PagedArticle
 import com.hcdisat.news.domain.repository.EveryNewsRepository
 import com.hcdisat.news.domain.repository.PagedArticleRepository
 import com.hcdisat.news.domain.usecases.LoadNewsUseCase
@@ -23,11 +23,12 @@ internal interface NewsModule {
     fun bindsLoadNewsUseCase(impl: LoadNewsUseCaseImpl): LoadNewsUseCase
 
     @Binds
-    @ViewModelScoped
-    fun bindsArticleDataSource(impl: ArticleDataSource): PagingSource<Int, PagedArticle>
+    @EveryNewsRepositoryNetwork
+    fun bindsEveryNewsRepository(impl: EveryNewsRepositoryImpl): EveryNewsRepository
 
     @Binds
-    fun bindsEveryNewsRepository(impl: EveryNewsRepositoryImpl): EveryNewsRepository
+    @EveryNewsRepositoryNetworkFake
+    fun bindsEveryNewsRepositoryFake(impl: EveryNewsFakeRepository): EveryNewsRepository
 
     @Binds
     @ViewModelScoped

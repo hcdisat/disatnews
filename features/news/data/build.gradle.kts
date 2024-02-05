@@ -44,7 +44,9 @@ dependencies {
 
     testImplementation(libs.junit)
     implementation(libs.retrofit)
+    implementation(libs.converter.gson)
 
     implementation(project(ProjectSettings.Modules.CoreDataAccessNetworking.path))
+    implementation(project(ProjectSettings.Modules.CoreCommon.path))
     implementation(project(ProjectSettings.Modules.FeaturesNewsDomain.path))
 }

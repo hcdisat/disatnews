@@ -2,20 +2,20 @@ package com.hcdisat.news.data
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
+import com.hcdisat.common.exceptions.MaxResultsReachedException
 import com.hcdisat.news.domain.entity.PagedArticle
 import com.hcdisat.news.domain.entity.PagedArticles
 import com.hcdisat.news.domain.repository.EveryNewsRepository
 import java.io.IOException
 import java.util.concurrent.atomic.AtomicInteger
 import java.util.concurrent.atomic.AtomicReference
-import javax.inject.Inject
 
-class ArticleDataSource @Inject constructor(
-    private val everyNewsRepository: EveryNewsRepository
+class ArticleDataSource(
+    private val everyNewsRepository: EveryNewsRepository,
+    private val pageSize: Int
 ) : PagingSource<Int, PagedArticle>() {
     companion object {
         private const val FIRST_PAGE = 1
-        private const val PAGE_SIZE = 20
     }
 
     private val sources: AtomicReference<List<String>> = AtomicReference()
@@ -26,24 +26,25 @@ class ArticleDataSource @Inject constructor(
     }
 
     override fun getRefreshKey(state: PagingState<Int, PagedArticle>): Int? {
-        val anchorPosition = state.anchorPosition ?: return null
-        val page = state.closestPageToPosition(anchorPosition)
-
-        return page?.nextKey?.minus(FIRST_PAGE) ?: page?.prevKey?.plus(FIRST_PAGE)
+        return state.anchorPosition?.let { anchorPosition ->
+            val page = state.closestPageToPosition(anchorPosition)
+            return page?.prevKey?.plus(1) ?: page?.nextKey?.minus(1)
+        }
     }
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, PagedArticle> {
         val page = params.key ?: FIRST_PAGE
         return try {
             val result = makeCall(page).getOrThrow()
-            val total = articleCount.updateAndGet { result.articles.size }
-
+            val total = articleCount.updateAndGet { it + result.articles.size }
             LoadResult.Page(
                 data = result.articles,
+                prevKey = null,
                 nextKey = if (total == result.totalResults) null else page + 1,
-                prevKey = null
             )
         } catch (e: IOException) {
+            LoadResult.Error(e)
+        } catch (e: MaxResultsReachedException) {
             LoadResult.Error(e)
         } catch (e: Throwable) {
             LoadResult.Error(e)
@@ -54,6 +55,6 @@ class ArticleDataSource @Inject constructor(
         everyNewsRepository.getBySources(
             sources = sources.get().toTypedArray(),
             page = page,
-            pageSize = PAGE_SIZE
+            pageSize = pageSize
         )
 }

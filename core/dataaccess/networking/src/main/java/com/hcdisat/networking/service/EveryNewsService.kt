@@ -18,6 +18,6 @@ interface EveryNewsService {
     suspend fun getBySources(
         @Query("sources") sources: String,
         @Query("page") page: Int,
-        @Query("pageSize") pageSize: Int,
+        @Query("pageSize") pageSize: Int = 10,
     ): Response<EverythingResponse>
 }
